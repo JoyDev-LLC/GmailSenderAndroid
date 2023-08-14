@@ -54,6 +54,19 @@ afterEvaluate {
                 artifactId = "gmail-sender"
                 version = "1.0.0"
             }
+            //TODO Чтобы отправить пакет на сервер нужно добавить в gradle.properties токен // Костян Зюков tg@gra_dus
+//            repositories {
+//                maven {
+//                    setUrl("https://gitlab.joy-dev.com/api/v4/projects/88/packages/maven")
+//                    credentials(HttpHeaderCredentials::class) {
+//                        name = "Private-Token"
+//                        value = findProperty("gitLabPrivateToken") as String?
+//                    }
+//                    authentication {
+//                        create("header", HttpHeaderAuthentication::class)
+//                    }
+//                }
+//            }
         }
     }
 }

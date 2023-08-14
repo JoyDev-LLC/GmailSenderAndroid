@@ -1,8 +1,8 @@
-package gmail
+package ru.joydev.gmail
 
 import android.util.Log
-import di.GmailDi
-import utils.isMainThread
+import ru.joydev.di.GmailDi
+import ru.joydev.utils.isMainThread
 
 /**
  * Класс обёртка для public api

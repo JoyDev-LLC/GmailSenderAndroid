@@ -1,9 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
+    namespace = "ru.joydev.ui_kit_gmail_send"
     compileSdk = 33
 
     defaultConfig {
@@ -24,15 +26,51 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+    }
+    publishing {
+        multipleVariants {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
 dependencies {
     //Gmail
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("library") {
+                from(components["release"])
+                groupId = "ru.joydev"
+                artifactId = "gmail-sender"
+                version = "1.0.0"
+            }
+            /*TODO
+            Чтобы отправить пакет на сервер нужно добавить в gradle.properties токен
+            затем в терминале нужно прописать ./gradlew publish // Костя Зюков tg@gra_dus"
+             */
+
+//            repositories {
+//                maven {
+//                    setUrl("https://gitlab.joy-dev.com/api/v4/projects/88/packages/maven")
+//                    credentials(HttpHeaderCredentials::class) {
+//                        name = "Private-Token"
+//                        value = findProperty("gitLabPrivateToken") as String?
+//                    }
+//                    authentication {
+//                        create("header", HttpHeaderAuthentication::class)
+//                    }
+//                }
+//            }
+        }
+    }
 }

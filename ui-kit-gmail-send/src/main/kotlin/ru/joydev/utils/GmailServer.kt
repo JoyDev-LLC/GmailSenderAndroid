@@ -1,4 +1,4 @@
-package utils
+package ru.joydev.utils
 
 import android.os.NetworkOnMainThreadException
 import android.util.Log
@@ -61,7 +61,7 @@ internal class GmailServer {
         }
 
     private fun getSession(): Session {
-        return Session.getDefaultInstance(props, object : Authenticator() {
+        return Session.getDefaultInstance(props, object : Authenticator(){
             override fun getPasswordAuthentication() = PasswordAuthentication(internalEmail, passwordToEmail)
         })
     }

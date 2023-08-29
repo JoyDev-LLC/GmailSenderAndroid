@@ -1,6 +1,6 @@
-package gmail
+package ru.joydev.gmail
 
-import di.GmailDi
+import ru.joydev.di.GmailDi
 
 /**
  * @see setUpServerCredentials

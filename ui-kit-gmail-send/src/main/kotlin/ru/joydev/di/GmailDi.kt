@@ -1,6 +1,6 @@
-package di
+package ru.joydev.di
 
-import utils.GmailServer
+import ru.joydev.utils.GmailServer
 
 internal object GmailDi {
 

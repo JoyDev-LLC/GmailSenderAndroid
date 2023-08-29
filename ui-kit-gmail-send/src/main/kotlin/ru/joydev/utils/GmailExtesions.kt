@@ -1,4 +1,4 @@
-package utils
+package ru.joydev.utils
 
 import android.os.Looper
 

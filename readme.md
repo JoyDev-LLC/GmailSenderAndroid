@@ -23,7 +23,7 @@ dependencies {
 GmailServerSeyUp.setUpServerCredentials("<INTERNAL_MAILBOX>","<INTERNAL_PASSWORD>")
 ```
 
-Internal mailbox is mail from which will come messages.
+Internal mailbox is mailbox from which will come messages.
 Internal password is password for internal mail.
 
 ## 4. Send Message

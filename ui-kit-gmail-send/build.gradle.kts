@@ -52,7 +52,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "ru.joydev"
                 artifactId = "gmail-sender"
-                version = "1.0.2"
+                version = "1.0.0"
             }
         }
     }
